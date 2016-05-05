@@ -1,0 +1,144 @@
+/*********************
+Variables
+*********************/
+
+$light-gray: 1px solid #ECECEC;
+$font-stack: "Open Sans",
+sans-serif;
+$main-color: #444;
+$green: #2faf90;
+
+/*********************
+Mixins
+*********************/
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+// change placeholder color
+@mixin placeholder($color, $opacity) {
+    ::-webkit-input-placeholder {
+        color: $color;
+        opacity: $opacity;
+    }
+    :-moz-placeholder {
+        color: $color;
+        opacity: $opacity;
+    }
+    ::-moz-placeholder {
+        color: $color;
+        opacity: $opacity;
+    }
+    :-ms-input-placeholder {
+        color: $color;
+        opacity: $opacity;
+    }
+}
+
+// center div
+@mixin centerdiv {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// modal window 
+@mixin translate($x, $y) {
+    -webkit-transform: translate($x, $y);
+    -ms-transform: translate($x, $y);
+    transform: translate($x, $y);
+}
+
+@mixin transition($transition) {
+    -webkit-transition: $transition;
+    transition: $transition;
+}
+
+// blur 
+@mixin blur($val, $opacity) {
+    -webkit-filter: blur($val);
+    -moz-filter: blur($val);
+    -o-filter: blur($val);
+    -ms-filter: blur($val);
+    filter: blur($val);
+    opacity: $opacity;
+}
+
+
+/*********************
+Placeholders
+*********************/
+
+%site-btns {
+    background-color: $green;
+    @include border-radius(4px);
+    font-size: 14px;
+    margin-top: 4px;
+    display: inline-block;
+    padding: 6px 25px;
+    color: #fff;
+    text-decoration: none;
+}
+
+%no-outline {
+    outline: none;
+}
+
+%footer-text {
+    float: left;
+    text-transform: uppercase;
+    padding: 5px 20px;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+%setting-toggles {
+    span {
+        cursor: pointer;
+        display: inline-block;
+        position: absolute;
+        margin-top: 7px;
+    }
+    p {
+        display: inline-block;
+        font-size: 16px;
+        color: #8A8989;
+        margin-left: 83px;
+    }
+    li {
+        line-height: 15px;
+    }
+}
+
+%modal {
+    &:before {
+        @extend %modal-bg;
+    }
+    a {
+        text-decoration: none;
+    }
+}
+
+%modal-bg {
+    content: "";
+    background: rgba(0, 0, 0, .8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+}
+
+%modal-dialog {
+    @include centerdiv;
+    border-radius: 5px;
+    z-index: 9999;
+    background-color: #DEE1E6;
+    box-sizing: border-box;
+}

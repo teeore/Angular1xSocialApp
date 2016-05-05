@@ -1,0 +1,215 @@
+ .hero {
+     width: 100%;
+     height: 425px;
+     background: transparent url('../images/hero-bg.jpg') no-repeat center center;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+     position: relative;
+     margin-top: 60px;
+ }
+ 
+ .content {
+     width: 600px;
+     height: 100%;
+     margin: 0 auto 200px;
+ }
+ 
+ .status {
+     @include centerdiv;
+     @include placeholder(#fff,
+     0.6);
+     width: 600px;
+     height: 155px;
+     background-color: $green;
+     opacity: 0.6;
+     font-weight: 300;
+     &-msg {
+         background-color: transparent;
+         height: 70px;
+         width: 90%;
+         border: 0;
+         font-size: 2.8em;
+         color: #DCDCDA;
+         margin-top: 4%;
+         margin-left: 5%;
+     }
+     &-add {
+         width: 300px;
+         height: 30px;
+         margin-left: 5%;
+         margin-top: 11px;
+         position: relative;
+     }
+     &-photo {
+         float: left;
+         width: 120px;
+     }
+     &-video {
+         float: left;
+         width: 120px;
+     }
+     a {
+         text-decoration: none;
+     }
+ }
+ 
+ .add-text {
+     font-size: 15px;
+     color: #fff;
+     opacity: 0.6;
+     padding-left: 5px;
+     .modal-dialog & {
+         color: #A2A2A2;
+         text-decoration: none;
+         float: left;
+         font-size: 14px;
+         margin-top: -2px;
+     }
+ }
+ 
+ .content-tab {
+     position: relative;
+     width: 600px;
+     height: 50px;
+     margin: -35px auto 0;
+     ul {
+         list-style: none;
+         height: 62%;
+         li {
+             width: 15%;
+             text-align: center;
+             float: left;
+             margin-right: 70px;
+             height: 100%;
+             a {
+                 text-transform: uppercase;
+                 text-decoration: none;
+                 color: #fff;
+                 font-weight: 400;
+                 opacity: 0.7;
+                 font-size: 12px;
+                 letter-spacing: 2px;
+                 height: 100%;
+             }
+         }
+     }
+ }
+ 
+ .active-tab {
+     opacity: 0.8;
+     border-bottom: 4px solid #33C7A4;
+ }
+ 
+ %posts {
+     border: $light-gray;
+     position: relative;
+     padding: 23px;
+     overflow: auto;
+     a {
+         color: #BEC3C9;
+         text-decoration: none;
+     }
+ }
+ 
+ .posts {
+     @extend %posts;
+     border-bottom: none;
+     &:first-child {
+         @include border-radius(5px 5px 0 0);
+     }
+     &:last-child {
+         @include border-radius(0 0 5px 5px);
+         border-bottom: $light-gray;
+     }
+ }
+ 
+ .post {
+     &-pic {
+         float: left;
+         width: 45px;
+     }
+     &-msg-wrapper {
+         float: left;
+         width: 84%;
+         margin-left: 17px;
+     }
+     &-msg {
+         font-size: 14px;
+         line-height: 1.6em;
+         color: #ADA8A8;
+         padding-bottom: 13px;
+     }
+     &-name {
+         font-size: 15px;
+         color: #7B7979;
+         padding-bottom: 7px;
+     }
+     &-time {
+         color: #BFBDB3;
+     }
+ }
+ 
+ .post-icons {
+     position: absolute;
+     right: 20px;
+     ul {
+         list-style: none;
+         li {
+             float: left;
+             margin-left: 15px;
+         }
+     }
+ }
+ 
+ .comments {
+     @extend %posts;
+     border-bottom: 0;
+     background-color: #f9fafb;
+     &-wrapper {
+         border: 0;
+         margin-bottom: 20px;
+         display: none;
+     }
+     &-text {
+         float: left;
+         margin-top: 13px;
+         span {
+             margin-left: 5px;
+         }
+     }
+ }
+ 
+ #reply-wrapper {
+     border: $light-gray;
+     padding: 23px;
+     font-size: 14px;
+     background-color: #f9fafb;
+ }
+ 
+ .reply {
+     &-modal {
+         @extend #reply-wrapper;
+     }
+     &-comment {
+         input {
+             width: 100%;
+             border: 1px solid #E2E2E2;
+             padding: 13px 10px;
+             box-sizing: border-box;
+             @include border-radius(3px);
+         }
+     }
+ }
+ 
+ .image-post {
+     img {
+         width: 600px;
+         height: auto;
+     }
+ }
+ 
+ #img-wrapper {
+     display: none;
+ }

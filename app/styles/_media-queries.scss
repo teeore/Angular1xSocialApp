@@ -1,0 +1,17 @@
+@media (max-width: 600px) {
+    .searchbox input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .header-right {
+        float: left;
+        .chat-icon {
+            margin-left: 0;
+        }
+    }
+    .logo {
+        width: 28%;
+    }
+}

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Social App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+</head>
+
+<body>
+    <div class="container">
+        <!-- header -->
+       <div ng-include src="views/header.html"></div>
+        <!-- hero image -->
+        <div class="hero">
+            <div class="status">
+                <input type="text" class="status-msg" placeholder="What's on your mind?">
+                <div class="status-add">
+                    <div class="status-photo">
+                        <a href="#">
+                            <span class="sprite-main sprite-camera-icon"></span>
+                            <span class="add-text">Add Photo</span>
+                        </a>
+                    </div>
+                    <div class="status-video">
+                        <a href="#">
+                            <span class="sprite-main sprite-video-icon"></span>
+                            <span class="add-text">Add Video</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-tab">
+            <ul>
+                <li id="post-tab"><a href="#">All Posts</a></li>
+                <li id="photos-tab"><a href="#">Photos</a></li>
+                <li id="videos-tab"><a href="#">Videos</a></li>
+            </ul>
+        </div>
+        <!-- page content -->
+        <div class="content">
+            <!-- posts -->
+            <div class="post-ng-view" ui-view></div>
+        </div>
+
+        <!-- modal window - view post-->
+        <div class="modalpost-ng-view" ui-view></div>
+        <footer>
+            <div class="footer-inner">
+                <ul>
+                    <li><span>&copy; 2015</span>Social App</li>
+                </ul>
+            </div>
+        </footer>
+        <!-- build:js(.) scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.js"></script>
+        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="bower_components/angular-scenario/angular-scenario.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+        <script src="bower_components/angular-cache/dist/angular-cache.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="bower_components/angular-modal-service/dst/angular-modal-service.js"></script>
+        <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:js scripts/main.js -->
+        <script src="scripts/controller/mainCtrl.js"></script>
+        <script src="scripts/services/mainSvcs.js"></script>
+        <!-- endbuild -->
+</body>
+
+</html>

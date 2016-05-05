@@ -1,0 +1,25 @@
+<div class="all-posts">
+    <div class="posts">
+        <div class="post-icons">
+            <ul>
+                <a href="#">
+                    <li class="sprite-main sprite-reply-icon"></li>
+                </a>
+                <a href="#">
+                    <li class="sprite-main sprite-like-icon"></li>
+                </a>
+                <li class="post-time">
+                    {{item.time}} </li>
+            </ul>
+        </div>
+        <div class="post-pic">
+            <img ng-src="{{item.avatar}}">
+        </div>
+        <div class="post-msg-wrapper">
+            <div class="post-name">{{item.name}}</div>
+            <div class="post-msg">{{item.msg}}</div>
+            <div class="comments-text-wrapper"></div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
