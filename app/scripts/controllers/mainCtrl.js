@@ -9,11 +9,24 @@ angular.module('socialApp')
         if (getLocalStorage == null || getLocalStorage.length == 0) {
             MainSvc.getPosts().then(function(response) {
                 $scope.posts = response.data;
-                console.log($scope.posts);
             });
         } else {
             $scope.posts = getLocalStorage;
         }
+
+        // get comments
+        // if($scope.post.comments.length) {
+            $scope.commentText = 'Expand';
+        // }
+        $scope.toggleComments = function(item) {
+            $scope.getComments = !$scope.getComments;
+            if($scope.getComments) {
+            $scope.commentText = 'Collapse';
+            } else {
+                $scope.commentText = 'Expand';
+            }
+
+        };
     }])
     .filter('photoFilter', function() {
         return function(item, type) {

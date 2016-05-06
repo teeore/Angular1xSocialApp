@@ -10,13 +10,15 @@
                 "avatar": "images/comment1.png",
                 "name": "Jed Bridges",
                 "msg": "Great way to start the week. Thanks for sharing!",
-                "time": "1h"
+                "time": "1h",
+                "liked": false
             },
             {
                 "avatar": "images/comment2.png",
                 "name": "Ren Walker",
                 "msg": "Feeling inspired now... thanks for great article @designmodo",
-                "time": "1h"
+                "time": "1h",
+                "liked": false
             }
         ]
     },

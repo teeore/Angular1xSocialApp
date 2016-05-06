@@ -18,9 +18,38 @@
         <div class="post-msg-wrapper">
             <div class="post-name">{{post.name}}</div>
             <div class="post-msg">{{post.msg}}</div>
-            <div class="comments-text-wrapper"></div>
         </div>
-        <div class="image-post-wrapper">
+        <div class="comments-text-wrapper" ng-show="post.comments">
+            <div class="comments-text"><a class="collapse" href="" ng-click="toggleComments()"> {{commentText}}<span class="sprite-main sprite-caret-up"> </span></a></div>
+        </div>
+        <!-- comments -->
+        <div class="comments-wrapper" ng-show="getComments">
+            <div class="comments" ng-repeat="comment in post.comments">
+                <div class="post-icons">
+                    <ul>
+                        <a href="">
+                            <li class="sprite-main sprite-reply-icon"></li>
+                        </a>
+                        <a href="">
+                            <li class="sprite-main sprite-like-icon"></li>
+                        </a>
+                        <li class="post-time"> {{comment.time}}</li>
+                    </ul>
+                </div>
+                <div class="post-pic"><img ng-src="{{comment.avatar}}"> </div>
+                <div class="post-msg-wrapper">
+                    <div class="post-name"> {{comment.name}}</div>
+                    <div class="post-msg">{{comment.msg}}</div>
+                </div>
+            </div>
+            <div id="reply-wrapper" ng-show="post.comments">
+                <div class="reply-comment">
+                    <input type="text" placeholder="Reply..." class="reply">
+                </div>
+            </div>
+        </div>
+        <!-- image -->
+        <div class="image-post-wrapper" ng-show="post.image.length">
             <div class="image-post">
                 <a href="" class="img-large">
                     <img ng-src="{{post.image}}">
