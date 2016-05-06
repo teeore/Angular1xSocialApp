@@ -1,8 +1,9 @@
 [
     {
         "avatar": "images/avatar1.jpg",
+        "media": "article",
         "name": "Sam Soffes",
-        "msg": "How to Get Inspired: the Right Way - Designmodo <a href=\"#\">bit.ly/1hqgbQA</a>. <br>Good stuff from <a href=\"#\">@designmodo!</a>",
+        "msg": "How to Get Inspired: the Right Way - Designmodo http://buff.ly/1Tqegu0. Good stuff from @designmodo!",
         "time": "3m",
         "comments": [
             {
@@ -14,34 +15,38 @@
             {
                 "avatar": "images/comment2.png",
                 "name": "Ren Walker",
-                "msg": "Feeling inspired now... thanks for great article <a href=\"#\">@designmodo</a>",
+                "msg": "Feeling inspired now... thanks for great article @designmodo",
                 "time": "1h"
             }
         ]
     },
     {
         "avatar": "images/avatar2.jpg",
+        "media": "photo",
         "name": "Meg Robichaud",
-        "msg": "My view this morning is simply beautiful... <br><a href=\"#\">instagram.com/p/mV0PUrHRwQ/</a>",
+        "msg": "My view this morning is simply beautiful.",
         "image": "images/img-main.jpg",
         "time": "25m"
     },
     {
         "avatar": "images/avatar3.jpg",
+        "media": "article",
         "name": "Keremt Suer",
-        "msg": "8 Apps to Turn Your Pipe Dreams Into Prototypes <br><a href=\"#\">on.mash.to/1oubyu8</a>",
+        "msg": "8 Apps to Turn Your Pipe Dreams Into Prototypes http://buff.ly/1Tv0FSx",
         "time": "50m"
     },
     {
         "avatar": "images/avatar4.jpg",
+        "media": "video",
         "name": "Liang Shi",
-        "msg": "How to get animations out of your head. <a href=\"#\">http://bit.ly/1q7BngO</a> <br> Funny and useful.",
+        "msg": "Funny Cats. https://vimeo.com/8178495",
         "time": "1h"
     },
     {
         "avatar": "images/avatar5.jpg",
+        "media": "video",
         "name": "Vitor Leal",
-        "msg": "You have to see this bike. It will make your daily commute a absolute joy ride! <a href=\"#\">vimeo.com/p/mV0PUrHRwQ/</a>",
+        "msg": "More cats! https://vimeo.com/9720104",
         "image": "images/vid-main.jpg",
         "time": "1h"
     }

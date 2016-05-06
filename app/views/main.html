@@ -1,16 +1,11 @@
-<div ui-view="newpost"></div>
+<div ng-include src="'views/partials/newpost.html'"></div>
 <div class="content-tab">
     <ul>
-        <li id="post-tab"><a href="#">All Posts</a></li>
-        <li id="photos-tab"><a href="#">Photos</a></li>
-        <li id="videos-tab"><a href="#">Videos</a></li>
+        <li id="post-tab"><a ui-sref="main.posts.all" ng-class="setactiveTab()" class="tabs">All Posts</a></li>
+        <li id="photos-tab"><a ui-sref="main.posts.photos" ng-class="setactiveTab()" class="tabs">Photos</a></li>
+        <li id="videos-tab"><a ui-sref="main.posts.videos" ng-class="setactiveTab()" class="tabs">Videos</a></li>
     </ul>
 </div>
-<!-- page content -->
 <div class="content">
-    <!-- posts -->
-    <div class="post-ng-view" ui-view="posts"></div>
-    
+    <div ui-view></div>
 </div>
-<!-- modal window - view post-->
-<div class="modalpost-ng-view" ui-view="postmodal"></div>

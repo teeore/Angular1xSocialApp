@@ -1,11 +1,12 @@
 'use strict';
 
 
-var studiocdnWebApp = angular.module('socialApp', [
+var socialApp = angular.module('socialApp', [
         'ngAnimate',
         'ngCookies',
         'ngResource',
         'ngRoute',
+        'ngSanitize',
         'ui.router',
         'angularModalService',
         'LocalStorageModule'
@@ -13,47 +14,57 @@ var studiocdnWebApp = angular.module('socialApp', [
 
 
     .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
-        $urlRouterProvider.when('', '/main');
-        $urlRouterProvider.otherwise('/main');
+        $urlRouterProvider.otherwise('/posts/all');
       
         $stateProvider
             .state('main', {
-                url: '/',
+                url: '',
                 templateUrl: 'views/main.html',
-                controller: 'MainCtrl',
+                abstract: true,
+                controller: 'MainCtrl'
+
+            })
+
+            // .state('main.details', {
+            //     url: '',
+            //     templateUrl: 'views/main.html',
+            //     views: {
+            //         // 'posts': {
+            //         //     templateUrl: 'views/post.html'
+            //         // },
+            //         'postmodal': {
+            //             templateUrl: 'views/postModal.html'
+            //         },
+            //         'comments': {
+            //             templateUrl: 'views/comments.html'
+            //         },
+            //         'newmodal': {
+            //             templateUrl: 'views/newModal.html'
+            //         },
+            //         'newpost' :{
+            //             templateUrl: 'views/newpost.html'
+            //         }
+            //     }
+                
+            // })
+
+            .state('main.posts', {
+                url: '/posts',
+                template: '<ui-view />',
                 abstract: true
             })
 
-            .state('main.details', {
-                url: '',
-                templateUrl: 'views/main.html',
-                views: {
-                    'posts@main': {
-                        url: '',
-                        templateUrl: 'views/post.html'
-                    },
-                    'postmodal': {
-                        templateUrl: 'views/postModal.html'
-                    },
-                    'comments': {
-                        templateUrl: 'views/comments.html'
-                    },
-                    'newmodal': {
-                        templateUrl: 'views/newModal.html'
-                    },
-                    'newpost@main' :{
-                        templateUrl: 'views/newpost.html'
-                    }
-                }
-                
+            .state('main.posts.all', {
+                url: '/all',
+                templateUrl: 'views/posts.html'
             })
 
-            .state('photos', {
+            .state('main.posts.photos', {
                 url: '/photos',
                 templateUrl: 'views/photos.html'
             })
 
-            .state('videos', {
+            .state('main.posts.videos', {
                 url: '/videos',
                 templateUrl: 'views/videos.html'
             })
@@ -63,11 +74,7 @@ var studiocdnWebApp = angular.module('socialApp', [
                 templateUrl: 'views/settings.html',
             })
 
-            $locationProvider.html5Mode(true);
+            // $locationProvider.html5Mode(true);
 
     })
-     .run(['$rootScope', '$state', '$stateParams', function ($rootScope,   $state, $stateParams) {
-        $rootScope.$state = $state;
-        $rootScope.$stateParams = $stateParams;
-    }]);
 
